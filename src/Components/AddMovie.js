@@ -70,3 +70,4 @@ function AddMovie ({ postMovies }){
 
 
 }
+export default AddMovie;
