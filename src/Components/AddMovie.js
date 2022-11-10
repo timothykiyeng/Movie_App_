@@ -14,6 +14,7 @@ function AddMovie ({ postMovies }){
                 name="name"
                 value={formData.name}
                 placeholder="Name of Movie"
+                onChange={handleChange}
                 required
               />
               <input
@@ -22,6 +23,7 @@ function AddMovie ({ postMovies }){
                 name="image_url"
                 placeholder="Image"
                 value={formData.image_url}
+                onChange={handleChange}
                 required
               />
               <input
@@ -30,6 +32,7 @@ function AddMovie ({ postMovies }){
                 name="overview"
                 placeholder="Overview"
                 value={formData.overview}
+                onChange={handleChange}
                 required
               />
               <input
@@ -39,6 +42,7 @@ function AddMovie ({ postMovies }){
                 placeholder="Ratings"
                 step="1"
                 value={formData.rating}
+                onChange={handleChange}
                 required
               />
             </div>
