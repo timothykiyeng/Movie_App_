@@ -1,4 +1,5 @@
 import React from "react";
+import image from '../Images/starwars.jpg'
 // import { FaStar } from "react-icons/fa";
 
 // const colors = {
@@ -28,6 +29,7 @@ export default function AddReview() {
 
     return (
         <div style={styles.container}>
+            <img src={image} />
             <h2> Movie Review </h2>
             {/* <div style={styles.stars}>
         {stars.map((_, index) => {
