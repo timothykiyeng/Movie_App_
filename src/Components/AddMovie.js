@@ -1,3 +1,3 @@
-function AddMovie (){
-    
+function AddMovie ({ postMovies }){
+
 }
