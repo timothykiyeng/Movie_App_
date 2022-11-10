@@ -10,11 +10,11 @@ function AddMovie ({ postMovies }){
           [event.target.name]: event.target.value,
         }));
       }
-    
+
 
     return (
         <div className="ui segment">
-          <form className="ui form">
+          <form onSubmit={handleSubmit} className="ui form">
             <div className="inline fields">
               <input
               className="add-movie"
