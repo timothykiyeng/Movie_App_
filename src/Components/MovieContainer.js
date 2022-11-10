@@ -56,24 +56,9 @@ return (
           <Movie key={displayMovieItem.id}  displayMovieItems={displayMovieItem} movieData={movieData} movie={Movie} setMovieData={setMovieData}/>
         ))}
       </div>
-
-
-    </>
+ </>
 
 )
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 export default MovieContainer
