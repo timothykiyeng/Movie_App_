@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const initialValues = { image_url: "", name: "", rating: "", overview: "" };
+const initialValues = { image_url: "", name: ""};
 function AddMovie ({ postMovies }){
     const [formData, setFormData] = useState(initialValues)
 
@@ -35,27 +35,8 @@ function AddMovie ({ postMovies }){
               className="add-movie"
                 type="text"
                 name="image_url"
-                placeholder="Image"
+                placeholder="Image_url"
                 value={formData.image_url}
-                onChange={handleChange}
-                required
-              />
-              <input
-              className="add-movie"
-                type="text"
-                name="overview"
-                placeholder="Overview"
-                value={formData.overview}
-                onChange={handleChange}
-                required
-              />
-              <input
-              className="add-movie"
-                type="number"
-                name="rating"
-                placeholder="Ratings"
-                step="1"
-                value={formData.rating}
                 onChange={handleChange}
                 required
               />

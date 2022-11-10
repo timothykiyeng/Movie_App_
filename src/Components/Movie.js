@@ -1,20 +1,14 @@
 import React from "react";
-function Movie({ displayMovieItems, setMovieData }) {
-  function handleDelete() {
-    fetch(`http://localhost:9292/movie/${displayMovieItems.id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then(() => {
-        setMovieData((movie) =>
-          movie.filter((mov) => mov.id !== displayMovieItems.id)
-        );
-        alert("Movie Deleted!");
-      });
+function Movie({ displayMovieItems }) {
+
+
+  function addToWatchList(){
+
   }
+
   return (
     <>
-      <div className="movie" onClick={handleDelete}>
+      <div className="movie">
         <img src={displayMovieItems.image_url} alt="" />
         <div className="movie-info">
           <h3>{displayMovieItems.name}</h3>
@@ -23,6 +17,7 @@ function Movie({ displayMovieItems, setMovieData }) {
         <div className="movie-overview">
           <h2>Overview:</h2>
           <p>{displayMovieItems.overview}</p>
+          <button onClick={addToWatchList}>Add To Watch List</button>
         </div>
       </div>
     </>
