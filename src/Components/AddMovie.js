@@ -4,6 +4,14 @@ const initialValues = { image_url: "", name: "", rating: "", overview: "" };
 function AddMovie ({ postMovies }){
     const [formData, setFormData] = useState(initialValues)
 
+    function handleChange(event) {
+        setFormData((formData) => ({
+          ...formData,
+          [event.target.name]: event.target.value,
+        }));
+      }
+    
+
     return (
         <div className="ui segment">
           <form className="ui form">
