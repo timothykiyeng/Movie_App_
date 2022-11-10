@@ -18,3 +18,5 @@ function Search ({search, onSearchChange}) {
     )
 }
 
+
+export default Search 
