@@ -1,9 +1,20 @@
 import React from "react";
-function Movie({ displayMovieItems }) {
+function Movie({ displayMovieItems, setMovieData }) {
+
+  function handleDelete (){
+    fetch(`http://localhost:9292/movie/${displayMovieItems.id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then(() => {
+          setMovieData((movie) => movie.filter((mov) => mov.id !== displayMovieItems.id));
+          alert("Movie Deleted!");
+        });
+  }
 
   return (
     <>
-      <div className="movie">
+      <div className="movie" onClick={handleDelete}>
         <img src={displayMovieItems.image_url} alt="" />
         <div className="movie-info">
           <h3>{displayMovieItems.name}</h3>
