@@ -109,6 +109,14 @@ body {
     justify-content: space-between;
 }
 
+.movie-one{
+    display: flex;
+    padding: 0.2rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .movie-overview {
     position: absolute;
     background-color: aliceblue;

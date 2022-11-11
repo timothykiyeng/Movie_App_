@@ -3,15 +3,43 @@ import { Routes, Route } from "react-router-dom";
 import {useState, useEffect} from "react"
 import Navbar from "./Navbar";
 import MovieContainer from "./MovieContainer";
+import WatchList from "./WatchList";
 
 
-const []
+
+
 function App() {
+
+  const apiHost = "http://localhost:9292/watchlists"
+
+const [watchlistData, setWatchlistData] = useState([])
+    useEffect(()=> {
+      fetch(apiHost)
+      .then((res) => res.json())
+      .then((data) => {
+       setWatchlistData(data)
+      })
+    }, [])
+
+    function postMovies(watchlistData){
+      fetch("http://localhost:9292/watchlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(watchlistData)
+      })
+      .then(res => res.json())
+      .then(newWatchList => setWatchlistData(watchlistData => [...watchlistData, newWatchList]))
+    }
+
+
   return (
     <div className="ui raised segment">
       <Navbar />
       <Routes>
         <Route path="/" element={<MovieContainer />} />
+        <Route path="/watchlist" element={<WatchList watchlistData={watchlistData} postMovies={postMovies} setWatchlistData={setWatchlistData}/>} />
       </Routes>
     </div>
   );

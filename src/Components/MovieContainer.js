@@ -34,14 +34,10 @@ function MovieContainer() {
       const searchMovie = (e) => {
         setSearch(e.target.value);
       }
-
-
-
 return (
     <>
-
     <Search search={search} onSearchChange={searchMovie} />
-    <br></br>
+    <br/>
     <AddMovie postMovies={postMovies}/>
     <br></br>
     <div className="movie-container">
@@ -53,7 +49,7 @@ return (
           }
           return false
         })?.map((displayMovieItem) => (
-          <Movie key={displayMovieItem.id}  displayMovieItems={displayMovieItem} movieData={movieData} movie={Movie} setMovieData={setMovieData}/>
+          <Movie key={displayMovieItem.id}  displayMovieItems={displayMovieItem} movieData={movieData} movie={Movie} setMovieData={setMovieData} />
         ))}
       </div>
  </>
