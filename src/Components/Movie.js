@@ -1,11 +1,6 @@
 import React from "react";
 function Movie({ displayMovieItems }) {
 
-
-  function addToWatchList(){
-
-  }
-
   return (
     <>
       <div className="movie">
@@ -17,7 +12,6 @@ function Movie({ displayMovieItems }) {
         <div className="movie-overview">
           <h2>Overview:</h2>
           <p>{displayMovieItems.overview}</p>
-          <button onClick={addToWatchList}>Add To Watch List</button>
         </div>
       </div>
     </>

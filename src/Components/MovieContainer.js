@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import AddMovie from "./AddMovie";
 import Movie from "./Movie";
 import Search from "./Search";
 
@@ -17,12 +18,27 @@ function MovieContainer() {
           })
       }, []);
 
+
+      function postMovies(movieData){
+        fetch("http://localhost:9292/movie", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(movieData)
+        })
+        .then(res => res.json())
+        .then(newMovie => setMovieData(movieData => [...movieData, newMovie]))
+      }
+
       const searchMovie = (e) => {
         setSearch(e.target.value);
       }
 return (
     <>
     <Search search={search} onSearchChange={searchMovie} />
+    <br/>
+    <AddMovie postMovies={postMovies}/>
     <br></br>
     <div className="movie-container">
       {movieData.filter((movie)=>{
