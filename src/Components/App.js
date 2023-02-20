@@ -1,12 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import {useState, useEffect} from "react"
-import Navbar from "./Navbar";
-import MovieContainer from "./MovieContainer";
-import WatchList from "./WatchList";
-
-
-
+import {useState, useEffect} from "react";
+import Card from "./Cards"
 
 function App() {
 
